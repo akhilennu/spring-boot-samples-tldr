@@ -7,13 +7,13 @@ A step-by-step Spring Boot reference project, designed to teach and recap enterp
 ## 🚩 Roadmap (Tickable Checklist)
 
 ### **Project Setup & Build**
-- [x] Initialize Spring Boot project (Maven)
-- [x] Set group/artifact/package naming conventions
-- [x] Add .gitignore, README, code style configs
+- [x] [Initialize Spring Boot project (Maven)](docs/pr-01-project-setup.md)
+- [x] [Set group/artifact/package naming conventions](docs/pr-01-project-setup.md)
+- [x] [Add .gitignore, README, code style configs](docs/pr-01-project-setup.md)
 
 ### **API Foundation (Web + REST conventions)**
-- [ ] Add `spring-boot-starter-web`
-- [ ] Basic controllers, RESTful endpoints: GET/POST/PUT/DELETE
+- [x] [Add `spring-boot-starter-web`](docs/pr-02-api-foundation-basic-rest.md)
+- [x] [Basic controllers, RESTful endpoints: GET/POST/PUT/DELETE](docs/pr-02-api-foundation-basic-rest.md)
 - [ ] API versioning approach
 - [ ] Request/response logging
 - [ ] Consistent URI and error response conventions
