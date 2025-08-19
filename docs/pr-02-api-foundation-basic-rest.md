@@ -1,5 +1,5 @@
 # PR-02: API Foundation (Web + REST)
-Linked PR: `#2`
+Linked PR: [`#2`](https://github.com/akhilennu/spring-boot-samples-tldr/pull/2)
 
 ## What was done
 - Added the `spring-boot-starter-web` dependency to `pom.xml` to enable web and RESTful capabilities.
