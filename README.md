@@ -7,9 +7,9 @@ A step-by-step Spring Boot reference project, designed to teach and recap enterp
 ## 🚩 Roadmap (Tickable Checklist)
 
 ### **Project Setup & Build**
-- [ ] Initialize Spring Boot project (Maven)
-- [ ] Set group/artifact/package naming conventions
-- [ ] Add .gitignore, README, code style configs
+- [x] Initialize Spring Boot project (Maven)
+- [x] Set group/artifact/package naming conventions
+- [x] Add .gitignore, README, code style configs
 
 ### **API Foundation (Web + REST conventions)**
 - [ ] Add `spring-boot-starter-web`
