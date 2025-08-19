@@ -1,97 +1,89 @@
 # spring-boot-samples-tldr
 
-A reference Spring Boot project featuring a clear, step-by-step progression from basics to advanced. Each step is small, focused, and explained with its own PR and a cheat-sheet `.md` file for easy review. This project is ideal for quick recollection or onboarding to modern Spring Boot practices.
+A step-by-step Spring Boot reference project, designed to teach and recap enterprise development practices—one focused PR/concept at a time. Each progress point gets its own `.md` file for rapid recall and onboarding.
 
 ---
 
-## 🚩 Roadmap (Progress Checklist)
+## 🚩 Roadmap (Tickable Checklist)
 
-- [ ] **Project Setup**  
-  - Initialize empty Spring Boot project (Maven/Gradle)
-  - Setup group/artifact/package naming conventions  
-  - .gitignore and standard files
+### **Project Setup & Build**
+- [ ] Initialize Spring Boot project (Maven)
+- [ ] Set group/artifact/package naming conventions
+- [ ] Add .gitignore, README, code style configs
 
-- [ ] **Web Starter**
-  - Add `spring-boot-starter-web`
-  - Create a basic controller
-  - Configure request/response logging
+### **API Foundation (Web + REST conventions)**
+- [ ] Add `spring-boot-starter-web`
+- [ ] Basic controllers, RESTful endpoints: GET/POST/PUT/DELETE
+- [ ] API versioning approach
+- [ ] Request/response logging
+- [ ] Consistent URI and error response conventions
 
-- [ ] **REST API Design**
-  - RESTful endpoints: GET, POST, PUT, DELETE
-  - URI conventions & best practices
-  - Error handling basics
-  - API versioning
+### **Persistence & Validation (JPA, validation, exception handling, migrations)**
+- [ ] Add `spring-boot-starter-data-jpa`
+- [ ] Configure DB connection (single DB first)
+- [ ] Entities, repositories, service layer
+- [ ] Bean validation (`@Valid`, custom validators)
+- [ ] Global exception handling (`@ControllerAdvice`)
+- [ ] Liquibase for schema migration (with starter changelog)
+- [ ] Data initialization (`data.sql`/test data)
 
-- [ ] **Persistence Layer (JPA + Hibernate)**
-  - Add `spring-boot-starter-data-jpa`
-  - Single DB config
-  - Basic entity, repo, service layering
-  - Data initialization via `data.sql` or `schema.sql`
+### **Security (basic → JWT → OAuth2)**
+- [ ] Add `spring-boot-starter-security`
+- [ ] Basic HTTP auth and endpoint restriction
+- [ ] Password encoding (BCrypt/Argon2)
+- [ ] JWT authentication for stateless APIs
+- [ ] OAuth2 login (e.g., Google, GitHub)
+- [ ] CORS configuration
+- [ ] Role-based access (`@PreAuthorize`, custom voters)
+- [ ] Rate limiting & brute-force attack protection
+- [ ] CSRF protection (enable/disable where appropriate)
+- [ ] Security best practices summary
 
-- [ ] **Multi-Database Setup**
-  - Configure 2 datasources (classic and advanced config)
-  - Entity separation and transaction management
+### **Testing (unit, integration, contract, coverage)**
+- [ ] JUnit5 setup, well-structured test packages
+- [ ] MockMVC for controller & REST API testing
+- [ ] Repository/service tests with H2/Testcontainers
+- [ ] API contract testing (Spring Cloud Contract/Pact)
+- [ ] Code coverage tools/reporting
 
-- [ ] **Entity Validation & Exception Handling**
-  - Bean validation annotations
-  - Custom exceptions and global exception handler (`@ControllerAdvice`)
-  - Error response standardization
+### **Documentation (Swagger/OpenAPI, guides)**
+- [ ] Integrate Swagger/OpenAPI (Springdoc or springfox)
+- [ ] Usage & quickstart guides for each domain
+- [ ] Contributor checklist/guidelines
 
-- [ ] **Security**
-  - Add `spring-boot-starter-security`
-  - Password encoding (BCrypt, Argon2, etc.)
-  - JWT authentication
-  - OAuth2 login (Google, GitHub, etc.)
-  - CORS configuration
-  - Role-based access control (@PreAuthorize)
-  - Stateless session management
-  - Security best practices for endpoints
+### **DevOps (Docker, profiles, CI/CD, monitoring)**
+- [ ] Dockerfile for app
+- [ ] Docker Compose (app + DB + optional Redis)
+- [ ] Environment-based config (`application.yml`, profiles)
+- [ ] Spring Boot Actuator (health, metrics, custom info)
+- [ ] Logging best practices (SLF4J, Logback etc.)
+- [ ] CI/CD basics (GitHub Actions/others)
+- [ ] Static analysis (SonarQube, Checkstyle, SpotBugs)
+- [ ] Helm chart for Kubernetes (optional)
+- [ ] Monitoring & alerting (Prometheus, Grafana integration—optional)
 
-- [ ] **Testing**
-  - JUnit5 setup, basic test structure
-  - MockMVC for REST API testing
-  - Data JPA tests (H2/Testcontainers)
-  - Test coverage tracking
-
-- [ ] **Microservices Patterns**
-  - Split monolith (package organization for future extraction)
-  - Add OpenFeign
-  - Service discovery (Eureka/Consul), if applicable
-  - Centralized config (Spring Cloud Config)
-  - Circuit breaker (Resilience4j)
-
-- [ ] **Documentation**
-  - Swagger/OpenAPI integration
-  - API usage and contributor guide
-
-- [ ] **DevOps Essentials**
-  - Dockerize application
-  - Profile-based configuration
-  - Spring Boot Actuator for health/metrics
-  - Externalized config (YAML, environment vars)
-  - Logging best practices (SLF4J, Logback)
-  - Optional: GitHub Actions for CI/CD
-
-- [ ] **Advanced: Observability & More**
-  - Distributed tracing basics
-  - Prometheus + Grafana integration (if desired)
-  - Custom endpoint metrics
+### **Advanced (observability, caching, async, microservices patterns)**
+- [ ] Multi-database configuration (multiple datasources)
+- [ ] Caching (Spring Cache + Redis)
+- [ ] Async processing (`@Async`, Spring Events)
+- [ ] Messaging integration (Kafka/RabbitMQ if desired)
+- [ ] Feature toggles (config-based, FF4J or similar)
+- [ ] Distributed tracing (Sleuth/Zipkin/Jaeger)
+- [ ] Resilience patterns (circuit breaker, rate limiter)
+- [ ] Modular codebase: preparation for microservices extraction
+- [ ] Service communication (OpenFeign, REST clients)
+- [ ] Centralized config (Spring Cloud Config)
+- [ ] Service discovery (Eureka/Consul)
+- [ ] Advanced endpoint metrics and custom healthchecks
 
 ---
 
 ## 📝 Contribution & Quick Reference
 
-- Each feature/concept is developed in a dedicated branch and merged via PR.
-- Every PR includes a markdown file (`pr-XX-feature.md`) summarizing:
-  - What was added/changed
-  - Key concepts/learning points
-  - Usage examples/sample API calls
-- Anyone can use this list as a refresher for robust Spring Boot app development.
+- Each feature/concept lives in its own branch and PR.
+- Every PR must include a `.md` file (`pr-XX-feature.md`) summarizing the feature, decisions, and usage examples.
+- **Tick the boxes above as you progress!**
 
 ---
 
-## Why this project?
-This repo aims to be your TL;DR for the most common and advanced patterns in enterprise Spring Boot, with each feature atomic, well-documented, and easy to reference by PR.
-
-
-
+_This repository is your “TL;DR” and playbook for enterprise Spring Boot, teaching both concepts and clean code structure in one evolving project._
